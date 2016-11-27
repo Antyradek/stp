@@ -1,0 +1,58 @@
+\section{Zadanie 1}
+Celem zadania jest wyznaczenie transmitancji dyskretnej od transmitancji ciągłej:
+\[
+ G(s)=\frac{(s + 2)(s + 3)}{(s - 4)(s + 5)(s + 6)}=\frac{s^2 + 5 s + 6}{s^3 + 7 s^2 - 14 s - 120}
+\]
+z okresem próbkowania $T=0,25$.
+
+Do wykonania tego można użyć programu MatLab. Najpierw należy ustawić zmienne i obliczyć za pomocą \mintinline{matlab}{c2dm}.
+Ekstrapolator zerowego rzędu osiągamy ustawiając \mintinline{matlab}{'zoh'}, co oznacza, że wartość próbki jest podtrzymywana w czasie jej trwania.
+\begin{minted}{matlab}
+T = 0.25;
+licz = [1 5 6];
+mian = [1 7 -14 -120];
+[liczdys,miandys] = c2dm(licz,mian,T,'zoh');
+\end{minted}
+Wynikiem są:
+\begin{minted}{matlab}
+liczdys =
+
+         0    0.2607   -0.2892    0.0761
+         
+miandys =
+
+    1.0000   -3.2279    1.4493   -0.1738
+\end{minted}
+
+Co się przekłada na:
+\[
+ G(z)=\frac{0,26z^2 - 0,29z + 0,08}{z^3 - 3,23z^2 + 1,45z - 0,17}
+\]
+
+Zera transmitancji ciągłej można wyliczyć przyrównując licznik do zera, podobnie bieguny przyrównując mianownik:
+
+\[
+\left\{
+\begin{array}{l}
+	s_{z1}=-2	\\
+	s_{z2}=-3	\\
+	s_{b1}=4	\\
+	s_{b2}=-5	\\
+	s_{b3}=-6	\\
+\end{array}
+\right.
+\]
+
+Używając funkcji \mintinline{matlab}{roots} łatwo obliczamy także zera i bieguny transmitancji dyskretnej:
+
+\[
+\left\{
+\begin{array}{l}
+	z_{z1}=0,68	\\
+	z_{z2}=0,43	\\
+	z_{b1}=2,72	\\
+	z_{b2}=0,29	\\
+	z_{b3}=0,22	\\
+\end{array}
+\right.
+\]
