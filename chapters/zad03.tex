@@ -1,0 +1,36 @@
+\section{Zadanie 3}
+Należy udowodnić, że transmitancja obliczona na podstawie pierwszego modelu w przestrzeni stanu jest taka sama, jak obliczona na podstawie drugiego modelu.
+Ponieważ transmitancja
+\[
+ G(z)=C(zI-A)^{-1}B+D
+\]
+to można porównać oba te modele ustawiając $z$ jako zmienną symboliczną.
+
+Obliczmy transmitancje od pierwszego i drugiego modelu.
+\begin{minted}{matlab}
+syms z;
+trans1 = Cd * inv(z * eye(3) - Ad) * Bd + Dd;
+trans2 = Cd2 * inv(z * eye(3) -Ad2) * Bd2 + Dd2;
+\end{minted}
+Używając funkcji porównującej \mintinline{matlab}{isequal(trans1,trans2)} otrzymujemy informację o logicznej wartości prawdziwej.
+\begin{minted}{matlab}
+ans =
+
+  logical
+
+   1
+\end{minted}
+ 
+Co pokazuje, że transmitancje są sobie równe. Alternatywnie upraszczając wzory używając \mintinline{matlab}{simplify(trans1)} i \mintinline{matlab}{simplify(trans2)}
+możemy je naocznie porównać po wypisaniu na ekran.
+\begin{minted}[breaklines]{matlab}
+trans1 =
+ 
+(3*(6261984766567268*z^2 - 6946490535369048*z + 1828337718241467))/(2*(36028797018963968*z^3 - 116297958657721184*z^2 + 52215069291327552*z - 6260866135760997))
+ 
+ 
+trans2 =
+ 
+(3*(6261984766567268*z^2 - 6946490535369048*z + 1828337718241467))/(2*(36028797018963968*z^3 - 116297958657721184*z^2 + 52215069291327552*z - 6260866135760997))
+\end{minted}
+
