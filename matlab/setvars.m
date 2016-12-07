@@ -18,3 +18,9 @@ trans2 = Cd2 * inv(z * eye(3) -Ad2) * Bd2 + Dd2;
 isequal(trans1,trans2);
 trans1 = simplify(trans1);
 trans2 = simplify(trans2);
+
+%4
+
+%5
+X0 = [3; -2; 1];
+Kd = acker(Ad2,Bd2,[0 0.2 0.3]);
