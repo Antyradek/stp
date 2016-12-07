@@ -7,3 +7,6 @@
 Projekt na Sterowanie Procesami
 
 Zadanie podane w formie dwóch skanów.
+
+Użyj dołączonego makefile, aby skomilować LaTeXa do PDF.
+Użyj makefile w img/, aby zamienić wykresy SVG na PDF, które są dołączane.
