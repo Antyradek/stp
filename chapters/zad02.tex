@@ -2,27 +2,27 @@
 \subsection{Metoda I}
 Celem zadania jest wyznaczenie powyższej reprezentacji modelu dyskretnego w przestrzeni stanu. To można obliczyć za pomocą \mintinline{matlab}{tf2ss}.
 \begin{minted}{matlab}
-[Ad,Bd,Cd,Dd] = tf2ss(liczdys,miandys);
+[Ad1,Bd1,Cd1,Dd1] = tf2ss(liczdys,miandys);
 \end{minted}
 Wynikiem są:
 \begin{minted}{matlab}
-Ad =
+Ad1 =
 
     3.2279   -1.4493    0.1738
     1.0000         0         0
          0    1.0000         0
          
-Bd =
+Bd1 =
 
      1
      0
      0
 
-Cd =
+Cd1 =
 
     0.2607   -0.2892    0.0761
     
-Dd =
+Dd1 =
 
      0
 \end{minted}
@@ -46,10 +46,10 @@ Co się przekłada na równania stanu:
 \subsection{Metoda II}
 Druga metoda polega na transponowaniu i zamianie wyliczonych macierzy:
 \begin{minted}{matlab}
-Ad2 = Ad';
-Bd2 = Cd';
-Cd2 = Bd';
-Dd2 = Dd;
+Ad2 = Ad1';
+Bd2 = Cd1';
+Cd2 = Bd1';
+Dd2 = Dd1;
 \end{minted}
 Co daje nam rozwiązanie:
 \begin{minted}{matlab}
