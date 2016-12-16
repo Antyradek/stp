@@ -1,6 +1,6 @@
 %1
 T = 0.25;
-licz = [1 5 6];
+licz = [0 1 5 6];
 mian = [1 7 -14 -120];
 [liczdys,miandys] = c2dm(licz,mian,T,'zoh');
 
@@ -28,7 +28,7 @@ Ad = Ad2;
 Bd = Bd2;
 Cd = Cd2;
 Dd = Dd2;
-Kd = acker(Ad,Bd,[0 0.2 0.3]);
+Kd = acker(Ad,Bd,[0.2 0.2 0.6]);
 
 %6
-Ld = acker(Ad',Cd',[0 0 0])';
+Ld = acker(Ad',Cd',[0.2 0.2 0.2])';
