@@ -1,5 +1,5 @@
 INKSCAPE=inkscape
-PDFS=plot5_1 plot5_2 plot5_3 plot5_4 plot5_5 plot5_6 obs1 obs2 obs3
+PDFS=plot1 plot2 plot3 plot4 plot5 plot6 plot7 obs1 obs2 obs3
 
 all: $(PDFS)
 
