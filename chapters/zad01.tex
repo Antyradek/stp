@@ -9,7 +9,7 @@ Do wykonania tego można użyć programu MatLab. Najpierw należy ustawić zmien
 Ekstrapolator zerowego rzędu osiągamy ustawiając \mintinline{matlab}{'zoh'}, co oznacza, że wartość próbki jest podtrzymywana w czasie jej trwania.
 \begin{minted}{matlab}
 T = 0.25;
-licz = [1 5 6];
+licz = [0 1 5 6];
 mian = [1 7 -14 -120];
 [liczdys,miandys] = c2dm(licz,mian,T,'zoh');
 \end{minted}
